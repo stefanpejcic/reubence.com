@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Reuben Rapose',
   headerTitle: 'Reuben Rapose',
   description:
-    'Welcome to my digital garden 🌱. I write code mainly for the web, and sometimes for the toaster too.',
+    'Eternally Seeking The Truth — sometimes by learning, sometimes by sharing, sometimes by chasing ambitious goals.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://reubence.com',
