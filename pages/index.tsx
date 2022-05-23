@@ -9,6 +9,11 @@ import NewsletterForm from '@/components/NewsletterForm'
 import { allBlogs } from 'contentlayer/generated'
 import Image from 'next/image'
 
+// combine list of classes function react
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
 const MAX_DISPLAY = 5
 
 export const getStaticProps = async () => {
@@ -25,40 +30,40 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-10 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight  text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
+            Eternally Seeking The Truth — sometimes by Learning, sometimes by Sharing, sometimes by
+            chasing Ambitious Goals.{' '}
           </p>
         </div>
-        <ul className="grid grid-cols-1 dark:divide-gray-700 sm:grid-cols-3 sm:gap-x-10">
+        <ul className="grid grid-cols-1 dark:divide-gray-700 sm:grid-cols-2 sm:gap-x-10 xl:grid-cols-3">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags, images } = post
             return (
-              <li key={slug} className="py-12">
+              <li key={slug} className="py-6 sm:py-12 ">
                 <article>
-                  <div className="group space-y-2 xl:items-baseline xl:space-y-0 ">
-                    <div className="relative mb-3 flex h-72 overflow-hidden rounded-2xl shadow-xl lg:h-96">
+                  <div className="group xl:items-baseline xl:space-y-0 ">
+                    <div className="relative mb-3 flex h-80 overflow-hidden rounded-2xl shadow-xl xl:h-96">
                       <Link href={`/blog/${slug}`}>
                         <Image
                           src={images[0]}
                           layout="fill"
+                          alt="Abstract"
                           className="bg-cover bg-center transition duration-500 ease-in-out hover:cursor-pointer group-hover:scale-150"
                         />
                       </Link>
                     </div>
-                    <div className="space-y-5 xl:col-span-3">
-                      <div className="space-y-6">
-                        <div className="flex flex-wrap justify-between">
-                          {tags.map((tag) => (
-                            <Tag key={tag} text={tag} />
-                          ))}
+                    <div className="xl:col-span-3">
+                      <div className="space-y-1">
+                        <div className={`flex flex-wrap justify-between`}>
+                          <Tag text={tags[0]} />
                           <dl>
                             <dt className="sr-only">Published on</dt>
                             <dd className="text-base font-medium leading-6 text-gray-500 group-hover:text-primary-500 dark:text-gray-400">
-                              <time dateTime={date}>{formatDate(date)}</time>
+                              <time dateTime="YYYY-MMM-DD">{formatDate(date)}</time>
                             </dd>
                           </dl>
                         </div>

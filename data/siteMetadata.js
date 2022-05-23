@@ -1,12 +1,14 @@
 const siteMetadata = {
-  title: 'Reuben Rapose',
+  title: `Reuben Rapose's Digital Garden`,
   author: 'Reuben Rapose',
   headerTitle: 'Reuben Rapose',
-  description: 'A digital garden by Reuben Rapose',
+  description:
+    'Welcome to my digital garden 🌱. I write code mainly for the web, and sometimes for the toaster too.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://reubence.com',
   siteRepo: 'https://github.com/reubence/reubence.com',
+  rss: 'https://reubence.com/feed.xml',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',

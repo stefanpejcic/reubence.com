@@ -56,49 +56,60 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             </svg>
           </div>
         </div>
-        <ul className="grid grid-cols-1 border-t-gray-300 pt-4 sm:grid-cols-3 sm:gap-10">
+        <ul className="grid grid-cols-1 border-t-gray-300 pt-4 sm:grid-cols-2 sm:gap-10 xl:grid-cols-3">
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((post) => {
             const { slug, date, title, summary, tags, images } = post
             return (
               <li key={slug} className="py-4">
-                <article className="group space-y-2">
+                <article className="">
                   {/* image in nextjs */}
-                  <div className="relative mb-3 flex h-72 overflow-hidden rounded-2xl shadow-xl lg:h-96">
-                    <Link href={`/blog/${slug}`}>
-                      <Image
-                        src={images[0]}
-                        layout="fill"
-                        className="bg-cover bg-center transition duration-500 ease-in-out hover:cursor-pointer group-hover:scale-150"
-                      />
-                    </Link>
-                  </div>
-                  <div className="space-y-5 xl:col-span-3">
-                    <div className="flex flex-wrap justify-between">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-base font-medium leading-6 text-gray-500 group-hover:text-primary-500 dark:text-gray-400">
-                          <time dateTime={date}>{formatDate(date)}</time>
-                        </dd>
-                      </dl>
-                    </div>
 
-                    <div>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
+                  <div className="group xl:items-baseline xl:space-y-0 ">
+                    <div className="relative mb-3 flex h-80 overflow-hidden rounded-2xl shadow-xl xl:h-96">
+                      <Link href={`/blog/${slug}`}>
+                        <Image
+                          src={images[0]}
+                          layout="fill"
+                          alt="Abstract"
+                          className="bg-cover bg-center transition duration-500 ease-in-out hover:cursor-pointer group-hover:scale-150"
+                        />
+                      </Link>
+                    </div>
+                    <div className="xl:col-span-3">
+                      <div className="space-y-1">
+                        <div className={`flex flex-wrap justify-between`}>
+                          <Tag text={tags[0]} />
+
+                          <dl>
+                            <dt className="sr-only">Published on</dt>
+                            <dd className="text-base font-medium leading-6 text-gray-500 group-hover:text-primary-500 dark:text-gray-400">
+                              <time dateTime="YYYY-MMM-DD">{formatDate(date)}</time>
+                            </dd>
+                          </dl>
+                        </div>
+
+                        <div>
+                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                            <Link
+                              href={`/blog/${slug}`}
+                              className="text-gray-900 transition duration-500 ease-in-out group-hover:text-primary-500 dark:text-gray-100"
+                            >
+                              {title}
+                            </Link>
+                          </h2>
+                        </div>
+                      </div>
+                      {/* <div className="text-base font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-gray-900 transition duration-500 ease-in-out group-hover:text-primary-500 dark:text-gray-100"
+                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                          aria-label={`Read "${title}"`}
                         >
-                          {title}
+                          Read more &rarr;
                         </Link>
-                      </h3>
+                      </div> */}
                     </div>
-                    {/* <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                      {summary}
-                    </div> */}
                   </div>
                 </article>
               </li>
