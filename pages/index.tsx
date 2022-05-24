@@ -34,7 +34,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             Latest
           </h1>
           <p className="hidden text-lg leading-7 text-gray-500 dark:text-gray-400 sm:flex">
-            Eternally Seeking The Truth — sometimes by Learning, sometimes by Sharing, sometimes by
+            Eternally Curious — sometimes by Learning, sometimes by Sharing, sometimes by
             chasing Ambitious Goals.{' '}
           </p>
         </div>
