@@ -7,7 +7,7 @@ export default function Footer() {
     <footer>
       <div className="my-16 flex flex-col">
         <div className="flex flex-col items-center justify-between sm:flex-row">
-          <div className="mb-3 flex space-x-4">
+          <div className="mb-3 flex flex-col space-x-4 sm:flex-row">
             <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
             <SocialIcon kind="github" href={siteMetadata.github} size={6} />
             {/* <SocialIcon kind="facebook" href={siteMetadata.facebook} size={6} /> */}
