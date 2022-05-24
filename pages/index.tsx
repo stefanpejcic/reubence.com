@@ -5,7 +5,6 @@ import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import { sortedBlogPost, allCoreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
-import NewsletterForm from '@/components/NewsletterForm'
 import { allBlogs } from 'contentlayer/generated'
 import Image from 'next/image'
 
@@ -34,8 +33,8 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             Latest
           </h1>
           <p className="hidden text-lg leading-7 text-gray-500 dark:text-gray-400 sm:flex">
-            Eternally Curious — sometimes by Learning, sometimes by Sharing, sometimes by
-            chasing Ambitious Goals.{' '}
+            Eternally Curious — sometimes by Learning, sometimes by Sharing, sometimes by chasing
+            Ambitious Goals.{' '}
           </p>
         </div>
         <ul className="grid grid-cols-1 dark:divide-gray-700 sm:grid-cols-2 sm:gap-x-10 xl:grid-cols-3">
