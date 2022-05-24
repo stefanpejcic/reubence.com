@@ -11,8 +11,12 @@ import Head from 'next/head'
 import siteMetadata from '@/data/siteMetadata'
 import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
+import { Router, useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
