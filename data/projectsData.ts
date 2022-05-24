@@ -14,7 +14,7 @@ const projectsData = [
     href: 'https://github.com/reubence/ERP',
   },
   {
-    title: 'NFT Generating Website',
+    title: 'Blockchain',
     description:
       'A single page website that mints NFTs for the user on the lasrgest marketplace OpenSea and is fully responsive. Built using Next.js, Framer-Motion and Supabase.',
     imgSrc: '/static/images/projects/Blockchain.png',
