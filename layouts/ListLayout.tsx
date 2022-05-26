@@ -24,7 +24,6 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
-  console.log(initialDisplayPosts)
   return (
     <>
       <div className="divide-y">
