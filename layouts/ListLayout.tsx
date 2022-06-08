@@ -65,7 +65,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   {/* image in nextjs */}
 
                   <div className="group xl:items-baseline xl:space-y-0 ">
-                    <div className="relative mb-3 flex h-80 overflow-hidden rounded-2xl shadow-xl xl:h-96">
+                    {/* <div className="relative mb-3 flex h-80 overflow-hidden rounded-2xl shadow-xl xl:h-96">
                       <Link href={`/blog/${slug}`}>
                         <Image
                           src={images[0]}
@@ -74,7 +74,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                           className="bg-cover bg-center transition duration-500 ease-in-out hover:cursor-pointer group-hover:scale-150"
                         />
                       </Link>
-                    </div>
+                    </div> */}
                     <div className="xl:col-span-3">
                       <div className="space-y-1">
                         <div className={`flex flex-wrap justify-between`}>
