@@ -1,6 +1,6 @@
 const projectsData = [
   {
-    title: 'Branding',
+    title: 'Website',
     description:
       'Branding is a process of creating a brand identity for a business. This project is a fully responsive & complex marketing website with smooth animations built with Next.js & Framer-Motion.',
     imgSrc: '/static/images/projects/Branding.png',
